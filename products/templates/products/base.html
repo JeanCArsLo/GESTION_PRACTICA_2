@@ -47,6 +47,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto align-items-center">
+            <li class="nav-item mr-3">
+              <a class="btn btn-outline-light btn-md" href="{% url 'about' %}">
+                <i class="fas fa-info-circle"></i> About
+              </a>
+            </li>
             {% if user.is_authenticated %}
             <li class="nav-item mr-3">
               <a class="btn btn-outline-light btn-md" href="{% url 'product_new' %}">

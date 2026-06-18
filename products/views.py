@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.views.generic import ListView, DetailView 
+from django.views.generic import ListView, DetailView, TemplateView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -33,3 +33,5 @@ class ProductDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     success_message = "Product successfully deleted!"
 
 
+class AboutView(TemplateView):
+    template_name = 'products/about.html'
