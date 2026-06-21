@@ -1,13 +1,16 @@
 body {
-    background: whitesmoke
+    background: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #app {
     background: white;
     padding: 30px;
     margin: 30px auto;
-    -webkit-box-shadow: 1px 1px 2px 0px rgba(224,224,224,1);
-    -moz-box-shadow: 1px 1px 2px 0px rgba(224,224,224,1);
-    box-shadow: 1px 1px 2px 0px rgba(224,224,224,1);
-    border-radius: 4px;
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
-.top-buffer { margin-top:20px; }
+.top-buffer { margin-top: 20px; }
+.card { border-radius: 10px; }
+.btn { border-radius: 6px; }

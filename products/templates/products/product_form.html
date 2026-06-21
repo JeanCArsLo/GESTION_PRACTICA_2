@@ -7,7 +7,7 @@
     <div class="col-12">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{% url 'product_list' %}"><i class="fas fa-home"></i> Products</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'product_list' %}"><i class="fas fa-home"></i> Productos</a></li>
                 <li class="breadcrumb-item active">{% if form.instance.pk %}Edit{% else %}New{% endif %}</li>
             </ol>
         </nav>
@@ -27,6 +27,8 @@
                 <form method="post" novalidate>
                     {% csrf_token %}
                     
+                    <p class="text-muted small mb-3"><span class="text-danger">*</span> Required fields</p>
+
                     {% if form.non_field_errors %}
                         <div class="alert alert-danger">
                             {{ form.non_field_errors }}
