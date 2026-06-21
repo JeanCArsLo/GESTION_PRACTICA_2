@@ -10,54 +10,75 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
       body {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: #121212;
         min-height: 100vh;
         display: flex;
         align-items: center;
+        color: #e0e0e0;
       }
       .card {
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        border: none;
+        background-color: #1e1e1e;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+        border: 1px solid #3a3a3a;
         border-radius: 15px;
       }
       .card-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
+        background: #2d2d2d;
+        color: #e0e0e0;
         border-radius: 15px 15px 0 0 !important;
-        border: none;
+        border-bottom: 2px solid #bb86fc;
         padding: 1.5rem;
       }
+      .card-header h3 { color: #bb86fc; }
+      .card-header p  { color: #9e9e9e; }
       .btn-primary {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: #bb86fc;
         border: none;
         border-radius: 25px;
         padding: 10px 30px;
         font-weight: 600;
-        transition: transform 0.2s;
+        color: #000;
+        transition: transform 0.2s, box-shadow 0.2s;
       }
       .btn-primary:hover {
+        background: #cf9ffe;
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 5px 15px rgba(187,134,252,0.4);
+        color: #000;
+      }
+      .btn-outline-primary {
+        color: #bb86fc;
+        border-color: #bb86fc;
+        border-radius: 20px;
+      }
+      .btn-outline-primary:hover {
+        background: #bb86fc;
+        color: #000;
       }
       .form-control {
+        background-color: #252525;
+        border: 2px solid #3a3a3a;
+        color: #e0e0e0;
         border-radius: 10px;
-        border: 2px solid #e0e0e0;
         padding: 12px 15px;
         transition: all 0.3s;
       }
       .form-control:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        background-color: #252525;
+        border-color: #bb86fc;
+        color: #e0e0e0;
+        box-shadow: 0 0 0 0.2rem rgba(187,134,252,0.25);
       }
+      .form-control::placeholder { color: #6e6e6e; }
       .form-group label {
         font-weight: 600;
-        color: #495057;
+        color: #e0e0e0;
         margin-bottom: 8px;
       }
-      .alert {
-        border-radius: 10px;
-        border: none;
-      }
+      .form-text.text-muted { color: #6e6e6e !important; }
+      .alert { border-radius: 10px; border: none; }
+      hr { border-color: #3a3a3a; }
+      p { color: #9e9e9e; }
     </style>
   </head>
   <body>
@@ -79,7 +100,7 @@
         <div class="col-md-6 col-lg-5">
           <div class="card">
             <div class="card-header text-center">
-              <h3 class="mb-0"><i class="fas fa-user-plus"></i> Create Account</h3>
+              <h3 class="mb-0"><i class="fas fa-user-plus"></i> Create.... Account</h3>
               <p class="mb-0 mt-2">Fill in the information below to register</p>
             </div>
             <div class="card-body p-4">
