@@ -1,0 +1,34 @@
+# Control de versiones
+.git
+.gitignore
+
+# Entornos virtuales Python
+venv/
+env/
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Base de datos local
+db.sqlite3
+/tmp/*.sqlite3
+
+# Variables de entorno (nunca incluir en la imagen)
+.env
+
+# Archivos estáticos ya colectados localmente
+staticfiles/
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Editores e IDEs
+.vscode/
+.idea/
+*.swp
+
+# macOS
+.DS_Store

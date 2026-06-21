@@ -1,0 +1,52 @@
+version: "3.9"
+
+# ─────────────────────────────────────────────────────────────
+# Servicios
+# ─────────────────────────────────────────────────────────────
+services:
+
+  # ── Base de datos PostgreSQL ──────────────────────────────
+  db:
+    image: postgres:15-alpine
+    container_name: conceptu_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: conceptu
+      POSTGRES_USER: conceptu_user
+      POSTGRES_PASSWORD: conceptu_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"          # expuesto para poder conectar con DBeaver/pgAdmin
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U conceptu_user -d conceptu"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Aplicación Django ─────────────────────────────────────
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: conceptu_web
+    restart: unless-stopped
+    env_file:
+      - .env                  # variables de entorno (ver .env.example)
+    environment:
+      DATABASE_URL: postgres://conceptu_user:conceptu_pass@db:5432/conceptu
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - .:/app                # hot-reload en desarrollo (opcional)
+      - static_volume:/app/staticfiles
+
+# ─────────────────────────────────────────────────────────────
+# Volúmenes persistentes
+# ─────────────────────────────────────────────────────────────
+volumes:
+  postgres_data:
+  static_volume:
